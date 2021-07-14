@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+    <div class="form-tasks">
+        <mat-form-field class="input-task-width">
+            <mat-label>Tarefa</mat-label>
+            <input matInput required [ngModel]="task?.title" [(ngModel)]="task.title" name="title">
+        </mat-form-field>
+        <mat-form-field class="input-task-width">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput required [ngModel]="task?.description" [(ngModel)]="task.description" name="description" rows="5"></textarea>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="edit_button">
+    <button mat-raised-button color="warn" (click)="closeShow()">Fechar</button>
+    <button mat-raised-button color="primary" (click)="updateTask()" width="100%">Atualizar Tarefa</button>
+</div>

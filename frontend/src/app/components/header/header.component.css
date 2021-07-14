@@ -1,0 +1,8 @@
+.header-center {
+    display: flex;
+    margin: 0 auto;
+}
+
+mat-toolbar {
+    margin: 0 0 10px 0;
+}

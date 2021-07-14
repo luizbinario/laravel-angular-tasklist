@@ -1,0 +1,40 @@
+
+<div class="content">
+    <mat-card>
+        <div class="form-tasks">
+            <mat-form-field class="input-task-width">
+                <mat-label>Nova Tarefa</mat-label>
+                <input matInput required [(ngModel)]="newTask.title" name="title">
+            </mat-form-field>
+        </div>
+        <div class="input-task-submit">
+            <button mat-raised-button color="primary" (click)="createTask()" width="100%">Criar Tarefa</button>
+        </div>
+    </mat-card>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id" width="20px">
+        <mat-header-cell class="w-75" *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell *matCellDef="let task"> {{task.id}} </mat-cell>
+        </ng-container>
+    
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Tarefa </mat-header-cell>
+        <mat-cell *matCellDef="let task"> {{task.title}} </mat-cell>
+        </ng-container>
+    
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+        <mat-cell *matCellDef="let task">
+            <button mat-button (click)="dialogShow(task.id)"><i class="material-icons show">zoom_in</i></button>
+            <button mat-button (click)="dialogEdit(task.id)"><i class="material-icons edit">edit</i></button>
+            <button mat-button (click)="dialogDelete(task.id)"><i class="material-icons delete">delete</i></button>
+        </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

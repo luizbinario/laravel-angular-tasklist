@@ -1,0 +1,12 @@
+.input-task-width {
+    width: 100%;
+}
+
+.delete_button {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.delete_button > button {
+    margin: 0 0 0 5px;
+}

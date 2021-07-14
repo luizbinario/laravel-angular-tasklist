@@ -1,0 +1,66 @@
+.content {
+    padding: 0 2% 2% 2%;
+}
+
+mat-card {
+    margin: 0 0 10px 0;
+}
+
+.form-tasks {
+    border: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.input-task-width {
+    width: 50%;
+}
+
+.input-task-submit {
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.input-task-submit button {
+    width: 50%;
+}
+
+.item-center {
+    display: flex;
+    justify-content: center;
+}
+
+.status-buttons > button{
+    margin: 0 10px 10px 0;
+}
+
+.mat-table {
+    width: 100%;
+}
+
+.mat-column-id {
+    flex: 0 0 5%;
+}
+
+.mat-column-action {
+    flex: 0 0 35%;
+    justify-content: center;
+}
+
+i.show {
+    color: #2665d9;
+}
+
+i.edit {
+    color: #d9cd26;
+}
+
+i.archive {
+    color: #1e9b95;
+}
+
+i.delete {
+    color: red;
+}

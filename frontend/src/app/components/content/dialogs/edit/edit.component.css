@@ -1,0 +1,12 @@
+.input-task-width {
+    width: 100%;
+}
+
+.edit_button {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.edit_button > button {
+    margin: 0 0 0 5px;
+}
