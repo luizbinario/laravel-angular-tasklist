@@ -4,6 +4,7 @@ import { TaskService } from '../../task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ShowComponent } from './dialogs/show/show.component';
 import { EditComponent } from './dialogs/edit/edit.component';
+import { ArchiveComponent } from './dialogs/archive/archive.component';
 import { DeleteComponent } from './dialogs/delete/delete.component';
 
 @Component({
@@ -28,8 +29,9 @@ export class ContentComponent implements OnInit {
     this.getTasks()
   }
 
-  getTasks(status:number = 0) {
+  getTasks(status:string = "0") {
     this.taskService.read().subscribe(tasks => {
+      tasks = tasks.filter(task => task.status == status)
       this.dataSource = tasks;
     })
   }
@@ -39,6 +41,7 @@ export class ContentComponent implements OnInit {
       this.taskService.openSnackBar("Tarefa criada com sucesso!")
       this.ngOnInit()
     })
+    this.newTask.title = ''
   }
 
   dialogShow(id: number) {
@@ -52,6 +55,16 @@ export class ContentComponent implements OnInit {
     this.dialog.open(EditComponent, {
       width: '500px',
       data: {id: id}
+    })
+    this.dialog.afterAllClosed.subscribe(() => {
+      this.ngOnInit()
+    })
+  }
+  
+  dialogArchive(id: number, action:string) {
+    this.dialog.open(ArchiveComponent, {
+      width: '500px',
+      data: {id: id, action: action}
     })
     this.dialog.afterAllClosed.subscribe(() => {
       this.ngOnInit()

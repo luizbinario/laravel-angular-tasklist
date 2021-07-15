@@ -11,6 +11,10 @@
             <button mat-raised-button color="primary" (click)="createTask()" width="100%">Criar Tarefa</button>
         </div>
     </mat-card>
+    <div class="status-buttons">
+        <button mat-raised-button color="primary" (click)="getTasks()" width="100%">Tarefas ativas</button>
+        <button mat-raised-button color="accent" (click)="getTasks('1')" width="100%">Tarefas arquivadas</button>
+    </div>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Id Column -->
         <ng-container matColumnDef="id" width="20px">
@@ -29,8 +33,15 @@
         <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
         <mat-cell *matCellDef="let task">
             <button mat-button (click)="dialogShow(task.id)"><i class="material-icons show">zoom_in</i></button>
-            <button mat-button (click)="dialogEdit(task.id)"><i class="material-icons edit">edit</i></button>
-            <button mat-button (click)="dialogDelete(task.id)"><i class="material-icons delete">delete</i></button>
+            <span *ngIf="task.status == 0">
+                <button mat-button (click)="dialogEdit(task.id)"><i class="material-icons edit">edit</i></button>
+                <button mat-button (click)="dialogArchive(task.id, 'archive')"><i class="material-icons archive">archive</i></button>
+                <button mat-button (click)="dialogDelete(task.id)"><i class="material-icons delete">delete</i></button>
+            </span>
+            <span *ngIf="task.status == 1">
+                <button mat-button (click)="dialogArchive(task.id, 'unarchive')"><i class="material-icons unarchive">unarchive</i></button>
+                <button mat-button (click)="dialogDelete(task.id)"><i class="material-icons delete">delete</i></button>
+            </span>
         </mat-cell>
         </ng-container>
     

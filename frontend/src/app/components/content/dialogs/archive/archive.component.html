@@ -1,0 +1,20 @@
+<h3 mat-dialog-title>
+    <span *ngIf="this.data.action == 'archive'">Arquivar</span> 
+    <span *ngIf="this.data.action == 'unarchive'">Desarquivar</span> 
+    Tarefa?</h3>
+<div mat-dialog-content>
+    <p>
+        <b>Tarefa:</b> {{task?.title}}
+    </p>
+    <p>
+        <b>Descrição: </b>{{task?.description}}
+    </p>
+</div>
+<div mat-dialog-actions class="archive_button">
+    <button mat-raised-button color="warn" (click)="closeShow()">Fechar</button>
+    <button mat-raised-button color="primary" (click)="updateTask()" width="100%">
+        <span *ngIf="this.data.action == 'archive'">Arquivar</span> 
+        <span *ngIf="this.data.action == 'unarchive'">Desarquivar</span>
+         Tarefa
+    </button>
+</div>

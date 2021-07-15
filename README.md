@@ -1,5 +1,6 @@
 # laravel-angular-tasklist
 ## Uma lista de tarefas simples utilizando Laravel para backend e Angular para frontend
+### Além das funcionalidades padrão de um CRUD, adicionei também a opção de arquivamento(ou conclusão) das tarefas cadastradas.
 
 ### Frontend
 * Angular versão 11.2.14

@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EditComponent } from './components/content/dialogs/edit/edit.component';
 import { DeleteComponent } from './components/content/dialogs/delete/delete.component';
 import { ShowComponent } from './components/content/dialogs/show/show.component';
+import { ArchiveComponent } from './components/content/dialogs/archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ShowComponent } from './components/content/dialogs/show/show.component'
     EditComponent,
     DeleteComponent,
     ShowComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,

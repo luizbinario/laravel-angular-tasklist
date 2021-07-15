@@ -58,7 +58,11 @@ i.edit {
 }
 
 i.archive {
-    color: #1e9b95;
+    color: #1a8681;
+}
+
+i.unarchive {
+    color: #0c5e1a;
 }
 
 i.delete {
